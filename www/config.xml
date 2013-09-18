@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.theoraapp" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Ora</name>
+    <description>
+        An app that let's you find the best food and drink specials right now at any location.
+    </description>
+    <author email="lpa22@cornell.edu" href="http://theoraapp.com">
+        Ora Team
+    </author>
+    <icon height="512" src="res/icon/cordova_512.png" width="512" />
+    <icon cdv:platform="ios" height="144" src="res/icon/cordova_ios_144.png" width="144" />
+    <cdv:splash cdv:platform="ios" height="1004" src="res/screen/ipad_portrait.png" width="768" />
+    <cdv:splash cdv:platform="ios" height="2008" src="res/screen/ipad_retina_portrait.png" width="1536" />
+    <cdv:splash cdv:platform="ios" height="480" src="res/screen/iphone_portrait.png" width="320" />
+    <cdv:splash cdv:platform="ios" height="960" src="res/screen/iphone_retina_portrait.png" width="640" />
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <preference name="phonegap-version" value="1.9.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="stay-in-webview" value="false" />
+    <access origin="*" />
+</widget>

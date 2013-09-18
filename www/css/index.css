@@ -1,0 +1,404 @@
+html,
+body,
+.loadingOverlay {
+    height:100%;
+    font-size:10px;
+    width:100%;
+    background: #fff;
+}
+
+#resultsPage, #mapPage {
+    -webkit-user-select: none;
+}
+
+.loading {
+    background: #fff url('../img/smallLoading.gif') no-repeat center center;
+}
+
+.clear{
+    clear:both;
+}
+
+.loadingOverlay {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 2000;
+    display: none;
+    opacity:0.2;
+    background: #1a1a1a url('../img/loading.gif') no-repeat center center;
+}
+
+.space {
+    height:.5em;
+    clear:both;
+    width:100%;
+}
+
+.pageHeader {
+    z-index: 1000;
+    width:100%;
+    height:40px;
+    background: #1a1a1a;
+    position:relative;
+    overflow: hidden;
+}
+
+#resultsPage .pageHeader h1, #mapPage .pageHeader h1, #searchPage .pageHeader h1 {
+    font-size: 16px;
+    text-transform: capitalize;
+    display: block;
+    width:80%;
+    height:40px;
+    margin:0;
+    line-height: 40px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 10%;
+    -webkit-margin-end: 10%;
+    padding:0;
+    white-space: nowrap;
+    color:#fff;
+    text-align: center;
+    text-shadow:0px -1px 0 #000;
+    text-overflow:ellipsis;
+    font-weight: 600;
+    overflow: hidden;
+    position: relative;
+    font-family: 'HelveticaNeue-CondensedBold';
+}
+
+#searchIcon, #backIcon {
+    position: absolute;
+    z-index: 1005;
+    width: 24px;
+    height:24px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    padding-left:8px;
+    padding-right: 8px;
+    background-image: url('../img/search.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin:content-box;
+    display: block;
+}
+
+#backIcon {
+    background-image: url('../img/back.png');
+}
+
+#currentLocationIcon {
+    display: block;
+    float:left;
+    width:44px;
+    height:45px;
+    margin:0 8px 0 0;
+    background-image: url('../img/currentlocation.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-indent: -9999px
+}
+
+/* Results styling ------------------------------------ */
+
+#resultsHeader {
+    width:100%;
+    background: #fff;
+    position: relative;
+    z-index: 1000;
+}
+
+.blueArrow {
+    position: absolute;
+    z-index: 1001;
+    width:16px;
+    height:16px;
+    background: transparent url('../img/moreInfo.png') no-repeat 0 0;
+    background-size:100% 100%;
+    right:2px;
+    top:16px;
+    display: block;
+}
+
+#prevSpecialArrow {
+    left:2px;
+    right:auto;
+    background: transparent url('../img/moreInfoPrev.png') no-repeat 0 0;
+}
+
+.selectedResult {
+    clear:both;
+    padding:10px 0 10px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1000;
+    width:100%;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, #e6e6e6),
+        color-stop(1, #b1b1b1)
+    );
+}
+
+    .selectedResult .desc, .selectedResult .info, .selectedResult .address {
+        display: block;
+        clear:both;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        height:18px;
+        font-size: 16px;
+        line-height: 18px;
+        padding:0;
+        margin: 0 2% 4px 2%;
+        width:96%;
+        overflow: hidden;
+        text-align: center;
+        color:#000;
+        font-family: 'HelveticaNeue-CondensedBold';
+    }
+
+    .selectedResult .info {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    .selectedResult .address {
+        margin-bottom: 0;
+    }
+
+#resultsPage, #mapPage, #searchPage {
+    background: #fff;
+    overflow: hidden;
+}
+
+#resultsPage .content, #mapPage .content {
+    padding:0;
+    margin:0;
+    width:100%;
+}
+
+/*Time line and associated ---*/
+
+#timeLine {
+    width:100%;
+    clear:both;
+    height:26px;
+    z-index:1000;
+    background: #1a1a1a;
+    position: relative;
+}
+
+#timeLine .hour {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    width:8.3333%;
+    text-align: center;
+    height:26px;
+    font-size:10px;
+    line-height: 26px;
+    color:#fff;
+}
+
+#timeSliderWrap {    
+    overflow:visible;
+    width:100%;
+    height:26px;
+    left:0;
+    top:0;
+    z-index:1002;
+    position: absolute;
+}
+
+#timeSlider {
+    display: none;
+}
+
+.gridLines {
+    position: absolute;
+    z-index: 500;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+#nowLine, .gridLines div {
+    width:1px;
+    height:100%;
+    position: absolute;
+    z-index: 500;
+    background: #333;
+}
+
+.gridLines div {
+    background:#efefef;
+}
+
+#resultsWrap {
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    height:330px;
+}
+
+#results {
+    width:100%;
+    position:absolute;
+    overflow: hidden;
+    z-index:600;
+    margin-top: 12px;
+}
+
+    .result{
+        /*background: #11699A;*/
+        background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, #4e585a),
+            color-stop(1, #6a7375)
+        );
+        height:16px;
+        z-index:600;
+        position:relative;
+        clear:both;
+        margin-bottom: 4px;
+        border-radius:2px;
+    }
+
+        .result div {
+            display: none;
+            position: absolute;
+            overflow: hidden;
+            color:#1a1a1a;
+            font-size: 10px;
+            line-height: 16px;
+            height:16px;
+            width:30px;
+        }
+
+        .result .startTime {
+            text-align: right;
+            left:-32px;
+        }
+
+        .result .endTime {
+            text-align: left;
+            right:-32px;
+        }
+
+    .resultHidden{
+        background: transparent;
+        border:none;
+    }
+
+    .highlight{
+        background: #199DE6;
+    }
+
+#resultsSlider {
+    display: none;
+}
+
+#resultsSliderWrap {
+    position: absolute;
+    z-index:700;
+    width:100%;
+    height:auto;
+}
+
+#resultsSliderWrap .ui-focus {
+    box-shadow: none;
+}
+
+#resultsPage .pageLinks {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:24px;
+    background: #999;
+    z-index:600;
+    background: #1a1a1a;
+    overflow: hidden;
+}
+
+#resultsPage .pageLinks .pageLink {
+    width:50%;
+    text-align: center;
+    float:left;
+    display: block;
+    height:24px;
+    line-height: 24px;
+    text-decoration: none;
+    font-size: 12px;
+    color:#fff;
+    font-weight: 100;
+}
+
+#resultsPage #nextPageResults {
+    float: right;
+}
+/* Info wrap styling -------------------------------------------------- */
+
+#infoWrap {
+    padding:8px 0 0 0;
+    margin:0;
+    width:100%;
+    min-height: 50px;
+    clear:both;
+    overflow: hidden;
+}
+
+#mapResult {
+    border-bottom:1px solid #1a1a1a;
+    height:auto;
+    overflow: hidden;
+    position: relative;
+    clear: both;
+}
+
+    #mapResult .desc{
+        height:auto;
+        text-overflow:none;
+        white-space: normal;
+    }
+
+    #mapResult .address {
+        font-size:12px;
+    }
+
+/* Yelp styling -------------------------------------------------- */
+
+#yelpWrap {
+    float:left;
+    min-height: 50px;
+    min-width: 50px;
+    padding:0 0 0 8px;
+}
+
+#yelpWrap div{
+    clear:both;
+    padding-bottom: 2px;
+
+}
+
+#yelpWrap .image img{
+    width:50px;
+    height:50px;
+    border: 1px solid #1a1a1a;
+}
+
+/* Map styling -------------------------------------------------- */
+
+#mapCanvas {
+    width:242px;
+    padding:0;
+    height:320px;
+    margin:0 0 0 8px;
+    float:left;
+    overflow: hidden;
+}
